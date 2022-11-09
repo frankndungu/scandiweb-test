@@ -1,0 +1,15 @@
+{
+    "name": "frankndungu/scandiweb-test",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "dosha10",
+            "email": "ndungufrank01@gmail.com"
+        }
+    ],
+    "require": {}
+}
