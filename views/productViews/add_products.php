@@ -25,7 +25,7 @@
         <div class="row mb-3">
             <label for="sku" class="col-sm-2 col-form-label">SKU</label>
             <div class="col-sm-2">
-                <input required type="text" class="form-control" id="sku" value="">
+                <input required type="text" class="form-control" id="sku" value="<?php echo $product->data['sku']??''?>">
                 <div class="invalid-feedback">
                     Please set the SKU
                 </div>
@@ -35,14 +35,14 @@
         <div class="row mb-3">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-2">
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" value="<?php echo $product->data['name']??''?>">
             </div>
         </div>
 
         <div class="row mb-3">
             <label for="name" class="col-sm-2 col-form-label">Price ($)</label>
             <div class="col-sm-2">
-                <input type="number" class="form-control" id="price" min="0.01" step="0.01">
+                <input type="number" class="form-control" id="price" min="0.01" step="0.01" value="<?php echo $product->data['price']??''?>">
             </div>
         </div>
 
@@ -50,7 +50,11 @@
             <label for="name" class="col-sm-2 col-form-label">Product Type</label>
             <div class="col-sm-2">
                 <select class="form-select" id="productType" name="type">
-                    <option selected>Type Switcher</option>
+                    <option <?php if (!($product->data['type'] ?? '')) echo "selected"; ?>>Type Switcher</option>
+
+                    <?php foreach ($product::$validTypes ?? '' as $value) : ?>
+                        <option <?php if (($product->data['type'] ?? '') === $value) echo "selected"; ?> value="<?= $value ?>"><?= $value ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
         </div>

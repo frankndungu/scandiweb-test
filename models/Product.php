@@ -11,7 +11,7 @@ abstract class Product
     public float $price;
     public string $type;
     public string $value;
-    public static array $validTypes = ["DVD", "Book", "Furniture"];
+    public static array $validTypes = ["DVD", "Furniture", "Book"];
     public array $data;
 
     public function __construct($input)
