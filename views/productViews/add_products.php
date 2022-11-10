@@ -64,7 +64,7 @@
             <div class="row mb-3">
                 <label for="size" class="col-sm-2 col-form-label">Size (MB)</label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="size" min="1" step="1" value="">
+                    <input type="number" class="form-control" id="size" min="1" step="1" value="<?php echo $product->data['size']??''?>">
                 </div>
             </div>
         </fieldset>
@@ -73,16 +73,7 @@
             <div class="row mb-3">
                 <label for="weight" class="col-sm-2 col-form-label">Weight (KG)</label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="weight" min="1" step="1" value="">
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset class="d-none" id="dvd-description">
-            <div class="row mb-3">
-                <label for="size" class="col-sm-2 col-form-label">Size (MB)</label>
-                <div class="col-sm-2">
-                    <input type="number" class="form-control" id="size" min="1" step="1" value="">
+                    <input type="number" class="form-control" id="weight" min="1" step="1" value="<?php echo $product->data['weight']??''?>">
                 </div>
             </div>
         </fieldset>
@@ -91,19 +82,19 @@
             <div class="row mb-3">
                 <label for="height" class="col-sm-2 col-form-label">Height (CM)</label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="height" min="1" step="1" value="">
+                    <input type="number" class="form-control" id="height" min="1" step="1" value="<?php echo $product->data['height']??''?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="width" class="col-sm-2 col-form-label">Width (CM)</label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="width" min="1" step="1" value="">
+                    <input type="number" class="form-control" id="width" min="1" step="1" value="<?php echo $product->data['width']??''?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="length" class="col-sm-2 col-form-label">Length (CM)</label>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" id="length" min="1" step="1" value="">
+                    <input type="number" class="form-control" id="length" min="1" step="1" value="<?php echo $product->data['length']??''?>">
                 </div>
             </div>
         </fieldset>
