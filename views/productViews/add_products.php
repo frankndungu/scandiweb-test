@@ -60,6 +60,7 @@
         </div>
 
         <!--product types-->
+        <div id="product-description" class="mb-5">
         <fieldset class="d-none" id="dvd-description">
             <div class="row mb-3">
                 <label for="size" class="col-sm-2 col-form-label">Size (MB)</label>
@@ -98,5 +99,6 @@
                 </div>
             </div>
         </fieldset>
+        </div>
     </form>
 </div>
