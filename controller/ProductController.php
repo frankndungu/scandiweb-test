@@ -27,6 +27,13 @@ class ProductController
                 $productData[$key] = $value;
             }
 
+            $prodName = "app\\models\\productTypes\\" . $_POST['type'];
+            if (class_exists($prodName)) {
+                $product = new $prodName($productData);
+            } else {
+                $product = new Validation($productData);
+            }
+
             $errors = $product->validateData();
 
             if (!$errors) {

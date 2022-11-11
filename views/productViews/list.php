@@ -23,7 +23,8 @@
                     <p class="card-text text-center"><?php echo $product['sku']; ?></p>
                     <p class="card-text text-center"><?php echo $product['name']; ?></p>
                     <p class="card-text text-center"><?php echo $product['price']; ?> $</p>
-                    <p class="card-text text-center"><?php echo $product['type']; ?></p>
+                    <p class="card-text text-center"><?php echo $product['value']; ?></p>
+
                 </div>
             </div>
         </div>

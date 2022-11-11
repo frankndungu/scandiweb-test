@@ -36,7 +36,7 @@ class Database
     public function createProduct(Product $product)
     {
         $statement = $this->pdo->prepare("INSERT INTO products (sku, name, price, type, value)
-        VALUES (:sku, :name, :price, :type, :value)");
+                VALUES (:sku, :name, :price, :type, :value)");
 
         $statement->bindValue(':sku', $product->sku);
         $statement->bindValue(':name', $product->name);
