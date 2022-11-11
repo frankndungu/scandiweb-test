@@ -9,7 +9,7 @@
         </span>
     </div>
 </nav>
-<hr class="mx-5 py-3">
+<hr class="mx-3 py-2">
 
 <div class="container p-5">
     <div class="row row-cols-4 mt-2">

@@ -7,7 +7,7 @@
         </span>
     </div>
 </nav>
-<hr class="mx-5 py-3">
+<hr class="mx-3 py-1">
 
 <div class="container-fluid p-5">
     <fieldset>
@@ -131,3 +131,4 @@
     </div>
     </form>
 </div>
+
