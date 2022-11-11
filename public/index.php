@@ -6,8 +6,8 @@ use app\core\Router;
 use app\controller\ProductController;
 use app\core\Database;
 
-$router = new Router($database);
 $database = new Database();
+$router = new Router($database);
 
 $router->get('/', [ProductController::class, 'index']);
 $router->get('/addproduct', [ProductController::class, 'create']);

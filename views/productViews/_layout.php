@@ -26,6 +26,7 @@
 
 <body style="background: #dfaa4e;">
     <?php echo $content; ?>
+    
 </body>
 
 </html>

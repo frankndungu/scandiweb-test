@@ -13,12 +13,14 @@ class Database
     {
         $this->pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=products_server', 'root', '');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
     }
 
     public function getProducts()
     {
         $statement = $this->pdo->prepare('SELECT * FROM products ORDER BY sku');
         $statement->execute();
+
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -27,6 +29,7 @@ class Database
         $statement = $this->pdo->prepare('SELECT * FROM products WHERE sku = :sku');
         $statement->bindValue(':sku', $sku);
         $statement->execute();
+
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -40,6 +43,14 @@ class Database
         $statement->bindValue(':price', $product->price);
         $statement->bindValue(':type', $product->type);
         $statement->bindValue(':value', $product->value);
+
         $statement->execute();
+    }
+
+    public function deleteProduct($sku) {
+        $statement = $this->pdo->prepare('DELETE FROM products WHERE sku = :sku');
+        $statement->bindValue(':sku', $sku);
+
+        return $statement->execute();
     }
 }

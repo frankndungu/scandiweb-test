@@ -8,28 +8,23 @@ use app\models\productTypes\Validation;
 
 class ProductController
 {
-    public static function index() {
+    public static function index()
+    {
         $db = new Database();
-        ProductView::renderView('list_products', [
+        ProductView::renderView('list', [
             'products' => $db->getProducts()
-        ]);   
+        ]);
     }
 
-    public static function create() {
+    public static function create()
+    {
         $product = new Validation([]);
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $productData = [];
-            foreach ($_POST as $key => $val) {
-                $productData[$key] = $val;
-            }
-
-            $prodType = "app\\models\productTypes\\" . $_POST['type'];
-            if (class_exists($prodType)) {
-                $product = new $prodType($productData);
-            } else {
-                $product = new Validation($productData);
+            foreach ($_POST as $key => $value) {
+                $productData[$key] = $value;
             }
 
             $errors = $product->validateData();
@@ -40,16 +35,26 @@ class ProductController
                 header('Location: /');
                 exit;
             }
-
         }
 
-        ProductView::renderView('add_products', [
+        ProductView::renderView('add', [
             'errors' => $errors,
             'product' => $product
-        ]); 
+        ]);
     }
 
-    public static function delete() {}
+    public static function delete()
+    {
+        if ($_POST) {
+            $db = new Database();
+            foreach ($_POST as $key => $value) {
+                $db->deleteProduct($key);
+            }
+        }
+        header('Location: /');
+    }
 
-    public static function read() {}
+    public static function read()
+    {
+    }
 }
