@@ -11,7 +11,7 @@ class ProductController
     public static function index()
     {
         $db = new Database();
-        ProductView::renderView('list', [
+        ProductView::renderView('list_products', [
             'products' => $db->getProducts()
         ]);
     }
@@ -44,7 +44,7 @@ class ProductController
             }
         }
 
-        ProductView::renderView('add', [
+        ProductView::renderView('add_products', [
             'errors' => $errors,
             'product' => $product
         ]);
