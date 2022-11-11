@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand">Product Add</a>
+        <h1 class="navbar-brand">Product Add</h1>
         <span class="d-flex">
             <button class="btn btn-dark m-2" type="submit" form="product_form">Save</button>
             <a href="/" type="button" class="btn btn-dark m-2" type="submit">Cancel</a>

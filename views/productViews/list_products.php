@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand">Product List</a>
+        <h1 class="navbar-brand">Product List</h1>
         <span class="d-flex">
             <a href="/addproduct" class="btn btn-dark m-2" type="submit">Add</a>
             <form action="/delete-product" method="post" id="delete-form">
@@ -12,7 +12,7 @@
 <hr class="mx-3 py-2">
 
 <div class="container p-5">
-    <div class="row row-cols-4 mt-2">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
       <?php foreach ($products as $product) : ?>
         <div class="col mt-2">
             <div class="card border-dark">
