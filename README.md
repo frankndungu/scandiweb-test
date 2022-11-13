@@ -9,7 +9,9 @@ A web-app (accessible by an URL) containing two pages for:
 * Product list page.
 * Adding a product page.
 
-- This project was created with:
+## Technologies
+
+This project was created with:
 
 * PHP: 7.4.2
 * Bootstrap: 5.2
