@@ -18,7 +18,7 @@
                     <input required type="text" class="form-control" id="sku" value="<?= $product->data['sku'] ?? '' ?>"
                         name="sku">
                     <div class="invalid-feedback" id="skuFeedback">
-                        Please set the SKU
+                        Please provide the SKU
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <input required type="text" class="form-control" id="name"
                         value="<?= $product->data['name'] ?? '' ?>" name="name">
                     <div class="invalid-feedback">
-                        Please set the name
+                        Please provide the name
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                     <input required type="number" class="form-control" id="price" min="0.01" step="0.01"
                         value="<?= $product->data['price'] ?? '' ?>" name="price">
                     <div class="invalid-feedback">
-                        Please set the price
+                        Please provide the price
                     </div>
                 </div>
 
@@ -60,6 +60,7 @@
                         echo "selected";
                     } ?> value="<?= $value ?>"><?= $value ?></option>
                         <?php endforeach ?>
+                        
                     </select>
                     <div class="invalid-feedback">
                         Please choose a product type
@@ -77,7 +78,7 @@
                     <input type="number" class="form-control" id="size" min="1" step="1" name="size"
                         value="<?= $product->data['size'] ?? '' ?>">
                     <div class="invalid-feedback">
-                        Please set the size
+                        Please provide the size
                     </div>
                 </div>
             </div>
@@ -90,7 +91,7 @@
                     <input type="number" class="form-control" id="weight" min="1" step="1" name="weight"
                         value="<?= $product->data['weight'] ?? '' ?>">
                     <div class="invalid-feedback">
-                        Please set the weight
+                        Please provide the weight
                     </div>
                 </div>
             </div>
@@ -103,7 +104,7 @@
                     <input type="number" class="form-control" id="height" min="1" step="1" name="height"
                         value="<?= $product->data['height'] ?? '' ?>">
                     <div class="invalid-feedback">
-                        Please set the height
+                        Please provide the height
                     </div>
                 </div>
             </div>
@@ -113,7 +114,7 @@
                     <input type="number" class="form-control" id="width" min="1" step="1" name="width"
                         value="<?= $product->data['width'] ?? '' ?>">
                     <div class="invalid-feedback">
-                        Please set the width
+                        Please provide the width
                     </div>
                 </div>
             </div>
@@ -123,7 +124,7 @@
                     <input type="number" class="form-control" id="length" min="1" step="1" name="length"
                         value="<?= $product->data['length'] ?? '' ?>">
                     <div class="invalid-feedback">
-                        Please set the length
+                        Please provide the length
                     </div>
                 </div>
             </div>
