@@ -23,7 +23,7 @@ This project was created with:
 * Open terminal 
 * Run ``cd /opt/lampp/htdocs/folder-name``
 * Git clone
-* Download and install composer from [(https://getcomposer.org/)]
+* Download and install composer from https://getcomposer.org/
 * Open the folder and run composer update in the terminal
 * Start Apache and MYSQL on Xampp
 
