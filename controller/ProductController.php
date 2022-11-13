@@ -63,5 +63,8 @@ class ProductController
 
     public static function read()
     {
+        header('Content-Type: application/json');
+        $db = new Database();
+        echo json_encode($db->getProduct($_GET['sku']));
     }
 }
