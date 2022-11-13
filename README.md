@@ -15,7 +15,7 @@ This project was created with:
 
 * PHP: 7.4.2
 * Bootstrap: 5.2
-* SASS.
+* SCSS.
 * JavaScript.
 
 ## Setup
