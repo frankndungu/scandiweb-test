@@ -17,6 +17,9 @@
                 <div class="col-sm-auto">
                     <input required type="text" class="form-control" id="sku" value="<?= $product->data['sku'] ?? '' ?>"
                         name="sku">
+                    <div id="skuValidator" class="text-dark position-absolute d-none" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                     <div class="invalid-feedback" id="skuFeedback">
                         Please provide the SKU
                     </div>

@@ -31,36 +31,74 @@ if (window.location.pathname === "/addproduct") {
 
   function typeSwitcher() {
     document
-    .querySelector("#productType")
-    .addEventListener("change", (event) => {
-      document.querySelectorAll("#productDescription input").forEach((element) => {
-        element.removeAttribute("required");
+      .querySelector("#productType")
+      .addEventListener("change", (event) => {
+        document
+          .querySelectorAll("#productDescription input")
+          .forEach((element) => {
+            element.removeAttribute("required");
+          });
+
+        document
+          .querySelectorAll("option:not(:first-child)")
+          .forEach((option) => {
+            document
+              .querySelector("#" + option.value.toLowerCase() + "Description")
+              .classList.add("d-none");
+          });
+
+        if (event.target.value) {
+          const field = document.querySelector(
+            "#" + event.target.value.toLowerCase() + "Description"
+          );
+          field.classList.remove("d-none");
+          field.querySelectorAll("input").forEach((element) => {
+            element.setAttribute("required", "");
+          });
+        }
+
+        singleInputValidation();
       });
+  }
 
-      document
-        .querySelectorAll("option:not(:first-child)")
-        .forEach((option) => {
-          document
-            .querySelector("#" + option.value.toLowerCase() + "Description")
-            .classList.add("d-none");
+  function skuValidator() {
+    const temp = (target) => {
+      const validator = document.querySelector("#skuValidator");
+      validator.classList.remove("d-none");
+      fetch("/api/read-product?sku=" + target.value)
+        .then((response) => response.json())
+        .then((json) => {
+          setTimeout(() => {
+            validator.classList.add("d-none");
+            if (json.hasOwnProperty("sku")) {
+              target.setCustomValidity("This SKU already exists");
+              document.querySelector("#skuFeedback").textContent =
+                "This SKU already exists.";
+            } else {
+              target.setCustomValidity("");
+              document.querySelector("#skuFeedback").textContent =
+                "Please provide an SKU.";
+            }
+          }, 200);
         });
+    };
 
-      if (event.target.value) {
-        const field = document.querySelector(
-          "#" + event.target.value.toLowerCase() + "Description"
-        );
-        field.classList.remove("d-none");
-        field.querySelectorAll("input").forEach((element) => {
-          element.setAttribute("required", "");
+    const sku = document.querySelector("#sku");
+    sku.addEventListener(
+      "focusout",
+      (event) => {
+        temp(event.target);
+        event.target.addEventListener("input", (event) => {
+          temp(event.target);
         });
-      }
-
-      singleInputValidation();
-    });
+      },
+      { once: true }
+    );
 
   }
 
   submitValidation();
   singleInputValidation();
   typeSwitcher();
+  skuValidator();
 }
