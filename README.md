@@ -2,7 +2,7 @@
 
 This is a products website.
 
-## Info
+## Project Info
 
 A web-app (accessible by an URL) containing two pages for:
 
