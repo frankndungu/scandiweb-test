@@ -51,16 +51,11 @@
                 <label for="name" class="col-sm-2 col-form-label">Product Type</label>
                 <div class="col-sm-auto">
                     <select required class="form-select" id="productType" name="type">
-                        <option <?php if (!($product->data['type'] ?? '')) {
-                        echo "selected";
-                    } ?>>Type Switcher</option>
-
+                        <option <?php if(!($product->data['type'])) echo"selected"; ?> value="">Type Switcher</option>
                         <?php foreach ($product::$validTypes ?? '' as $value) : ?>
-                        <option <?php if (($product->data['type'] ?? '') === $value) {
-                        echo "selected";
-                    } ?> value="<?= $value ?>"><?= $value ?></option>
+                        <option <?php if(($product->data['type'] ?? '') === $value) echo "selected"; ?>
+                            value="<?= $value ?>"><?= $value ?></option>
                         <?php endforeach ?>
-                        
                     </select>
                     <div class="invalid-feedback">
                         Please choose a product type
@@ -132,4 +127,3 @@
     </div>
     </form>
 </div>
-
