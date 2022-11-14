@@ -1,6 +1,7 @@
-## Redirect to public folder
 <IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteRule ^$ public/ [L]
-    RewriteRule (.*) public/index.php [L]
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    RewriteRule ^ public/index.php [L]
 </IfModule>
