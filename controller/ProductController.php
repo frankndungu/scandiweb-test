@@ -26,7 +26,7 @@ class ProductController
             foreach ($_POST as $key => $value) {
                 $productData[$key] = $value;
             }
-
+            //function that renders different types of products
             $prodName = "app\\models\\productTypes\\" . $_POST['type'];
             if (class_exists($prodName)) {
                 $product = new $prodName($productData);
