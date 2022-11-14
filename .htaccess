@@ -1,7 +1,0 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    RewriteCond %{HTTP:X-Forwarded-Proto} !https 
-
-    RewriteRule ^ public/index.php [L]
-</IfModule>
