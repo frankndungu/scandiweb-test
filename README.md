@@ -24,8 +24,10 @@ This project was created with:
 * Run ``cd /opt/lampp/htdocs/folder-name``
 * Git clone
 * Download and install composer from https://getcomposer.org/
-* Open the folder and run composer update in the terminal
 * Start Apache and MYSQL on Xampp
+* Open the folder and run composer update in the terminal
+* Run ``cd /opt/lampp/htdocs/folder-name/public``
+* Run PHP development server ``php -S localhost:8080``
 
 ## Credits
 
